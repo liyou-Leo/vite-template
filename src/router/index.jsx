@@ -4,7 +4,7 @@ import Layout from "@/components/Layout";
 import Login from "@/components/Login";
 import NotFound from "@/components/NotFound";
 
-import RouterConfig from './RouterConfig';
+import { RouterConfig } from './RouterConfig';
 
 const Router = createBrowserRouter([
     {
