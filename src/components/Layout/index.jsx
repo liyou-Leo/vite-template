@@ -6,7 +6,7 @@ import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 
 import AuthRoute from "@/router/AuthRoute";
 import { MenuConfig } from "@/router/RouterConfig";
-import Logo from "@common/images/logo.svg";
+import { ReactComponent as Logo } from "@common/images/logo.svg";
 
 const { Header, Sider, Content } = Layout;
 
@@ -50,12 +50,12 @@ const AppLayout = () => {
     return (
         <Layout>
             <Sider trigger={null} collapsible collapsed={collapsed} style={{ height: '100vh' }}>
-                <div className='h-16 bg-red-500' />
-                <Logo />
+                <div className="h-16 p-4 flex items-center justify-center">
+                    <Logo className="w-full h-full" />
+                </div>
                 <Menu
                     theme="dark"
                     mode="inline"
-                    inlineCollapsed={false}
                     selectedKeys={[location.pathname]}
                     openKeys={openKeys}
                     onOpenChange={onOpenChange}
@@ -64,7 +64,7 @@ const AppLayout = () => {
             </Sider>
 
             <Layout>
-                <Header style={{ padding: 0, background: colorBgContainer }}>
+                <Header style={{ padding: 0, background: colorBgContainer, display: 'flex', alignItems: 'center' }}>
                     <Button
                         type="text"
                         icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
@@ -75,6 +75,7 @@ const AppLayout = () => {
                             height: 64,
                         }}
                     />
+
                 </Header>
                 <Content
                     style={{

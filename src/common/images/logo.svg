@@ -7,7 +7,7 @@
       }
 
       .b, .c {
-        fill: #0f4b92;
+        fill: white;
         stroke-width: 0px;
       }
     </style>
