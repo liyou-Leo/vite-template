@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
-import { Outlet, Link, useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { AliveScope } from 'react-activation';
 import { Layout, Button, Menu, theme } from "antd";
-import { MenuFoldOutlined, MenuUnfoldOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined, } from '@ant-design/icons';
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 
 import AuthRoute from "@/router/AuthRoute";
 import { MenuConfig } from "@/router/RouterConfig";
+import Logo from "@common/images/logo.svg";
 
 const { Header, Sider, Content } = Layout;
 
 const AppLayout = () => {
     const [collapsed, setCollapsed] = useState(false);
     const [openKeys, setOpenKeys] = useState([]);
-    console.log("🚀 ~ AppLayout ~ openKeys:", openKeys)
     const location = useLocation();
 
     // 根据当前路径找到需要展开的父级菜单
@@ -50,7 +50,8 @@ const AppLayout = () => {
     return (
         <Layout>
             <Sider trigger={null} collapsible collapsed={collapsed} style={{ height: '100vh' }}>
-                <div className='h-24 bg-red-500' />
+                <div className='h-16 bg-red-500' />
+                <Logo />
                 <Menu
                     theme="dark"
                     mode="inline"

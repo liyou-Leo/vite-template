@@ -1,6 +1,6 @@
-import { KeepAlive } from 'react-activation';
-import { MenuFoldOutlined, MenuUnfoldOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined, } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
+import { KeepAlive } from 'react-activation';
+import { UploadOutlined, UserOutlined, VideoCameraOutlined, } from '@ant-design/icons';
 
 import Home from '@pages/Home';
 import Test from '@pages/Test';
@@ -17,6 +17,7 @@ const HomeConfig = [
     {
         key: '/home',
         label: '首页',
+        icon: <UserOutlined />,
         element: <Home />
     },
 ];
@@ -45,7 +46,7 @@ export const ProductConfig = [
 export const FundsConfig = [
     {
         key: 'funds_menu',
-        icon: <VideoCameraOutlined />,
+        icon: <UploadOutlined />,
         label: '产品配置',
         children: [
             {
