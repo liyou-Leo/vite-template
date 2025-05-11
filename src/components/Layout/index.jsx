@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { AliveScope } from 'react-activation';
-import { Layout, Button, Menu, theme } from "antd";
-import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+import { Layout, Button, Menu } from "antd";
+import { MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, SettingOutlined, LogoutOutlined } from '@ant-design/icons';
 
 import AuthRoute from "@/router/AuthRoute";
 import { MenuConfig } from "@/router/RouterConfig";
@@ -46,11 +46,10 @@ const AppLayout = () => {
         setOpenKeys(keys);
     };
 
-    const { token: { colorBgContainer, borderRadiusLG } } = theme.useToken();
     return (
         <Layout>
             <Sider trigger={null} collapsible collapsed={collapsed} style={{ height: '100vh' }}>
-                <div className="h-16 p-4 flex items-center justify-center">
+                <div className="h-12 p-2 flex items-center justify-center">
                     <Logo className="w-full h-full" />
                 </div>
                 <Menu
@@ -64,28 +63,27 @@ const AppLayout = () => {
             </Sider>
 
             <Layout>
-                <Header style={{ padding: 0, background: colorBgContainer, display: 'flex', alignItems: 'center' }}>
-                    <Button
-                        type="text"
-                        icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-                        onClick={() => setCollapsed(!collapsed)}
-                        style={{
-                            fontSize: '16px',
-                            width: 64,
-                            height: 64,
-                        }}
-                    />
+                <Header className="h-12 p-2 pr-6 bg-white flex items-center justify-between">
+                    <div className="flex items-center">
+                        <Button
+                            type="text"
+                            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+                            onClick={() => setCollapsed(!collapsed)}
+                            className="w-16 h-12 text-base"
+                        />
+                        <div className='ml-2 text-xl font-bold'>基金运营</div>
+                    </div>
 
+                    <div>
+                        <div>
+                            <UserOutlined />
+                            <span className="ml-2">陈凯</span>
+                            <SettingOutlined className="ml-4" />
+                            <LogoutOutlined className="ml-4" />
+                        </div>
+                    </div>
                 </Header>
-                <Content
-                    style={{
-                        margin: '24px 16px',
-                        padding: 24,
-                        minHeight: 280,
-                        background: colorBgContainer,
-                        borderRadius: borderRadiusLG,
-                    }}
-                >
+                <Content className="m-4 p-4 bg-white rounded-lg">
                     <AuthRoute>
                         <AliveScope>
                             <Outlet />
@@ -93,7 +91,7 @@ const AppLayout = () => {
                     </AuthRoute>
                 </Content>
             </Layout>
-        </Layout>
+        </Layout >
     )
 }
 export default AppLayout;

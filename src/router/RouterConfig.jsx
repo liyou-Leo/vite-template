@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { KeepAlive } from 'react-activation';
-import { UploadOutlined, UserOutlined, VideoCameraOutlined, } from '@ant-design/icons';
+import { UploadOutlined, HomeOutlined, VideoCameraOutlined, } from '@ant-design/icons';
 
 import Home from '@pages/Home';
 import Test from '@pages/Test';
@@ -17,7 +17,7 @@ const HomeConfig = [
     {
         key: '/home',
         label: '首页',
-        icon: <UserOutlined />,
+        icon: <HomeOutlined />,
         element: <Home />
     },
 ];
