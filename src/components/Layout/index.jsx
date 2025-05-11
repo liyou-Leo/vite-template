@@ -18,7 +18,7 @@ const AppLayout = () => {
     return (
         <Layout>
             <Sider trigger={null} collapsible collapsed={collapsed} style={{ height: '100vh' }}>
-                <div className='h-100 bg-red-500' />
+                <div className='h-24 bg-red-500' />
                 <Menu
                     theme="dark"
                     mode="inline"

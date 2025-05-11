@@ -8,7 +8,6 @@ const Test = () => {
 
     return (
         <>
-            <div className='h-100 bg-red-500' style={{ display: 'block' }} >2222</div>
             <h1>这是测试页面</h1>
             <Card title="计数器">当前计数：{count}</Card>
             <Button type="primary" onClick={() => setCount(count + 1)}>计数</Button>
