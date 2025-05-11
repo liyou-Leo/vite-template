@@ -62,7 +62,7 @@ const AppLayout = () => {
                 />
             </Sider>
 
-            <Layout>
+            <Layout className="bg-gray-100">
                 <Header className="h-12 p-2 pr-6 bg-white flex items-center justify-between">
                     <div className="flex items-center">
                         <Button
@@ -83,7 +83,7 @@ const AppLayout = () => {
                         </div>
                     </div>
                 </Header>
-                <Content className="m-4 p-4 bg-white rounded-lg">
+                <Content className="m-4 rounded-lg">
                     <AuthRoute>
                         <AliveScope>
                             <Outlet />

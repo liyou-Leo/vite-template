@@ -47,7 +47,7 @@ export const FundsConfig = [
     {
         key: 'funds_menu',
         icon: <UploadOutlined />,
-        label: '产品配置',
+        label: '资金配置',
         children: [
             {
                 key: '/funds',
