@@ -13,7 +13,13 @@ const Index = () => {
         pageSize: 15,
         total: 0
     });
-    const [tableList, setTableList] = useState([]);
+    const [tableList, setTableList] = useState([{
+        Id: '天演中证1000指数增强产品',
+        Sid: '指数增强型产品',
+        Name: '未分组',
+        Weight: 100,
+        UpdateTS: '2021-11-11 11:11:11',
+    }]);
     const [filterList, setFilterList] = useState([]);
     const [record, setRecord] = useState({});
     const [visible, setVisible] = useState(false);
@@ -74,16 +80,16 @@ const Index = () => {
     };
 
     const tableColumns = [
-        ...mainColumns().filter(({ dataIndex }) => filterList.includes(dataIndex)),
+        ...mainColumns(),
         {
             title: '操作',
             dataIndex: "Operation",
-            width: 280,
+            width: 100,
             render: (_, record) => {
                 const { Id } = record;
                 return (
                     <>
-                        <a type="primary" className="mr20" onClick={() => handleEdit(record)} >
+                        <a className="mr20" onClick={() => handleEdit(record)} >
                             编辑
                         </a>
                     </>

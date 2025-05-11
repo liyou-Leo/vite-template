@@ -1,3 +1,5 @@
+import { Tag } from "antd";
+
 const baseUrl = "/api/t0TraderManagement/";
 export const listUrl = baseUrl + "get_group_list";
 export const updateUrl = baseUrl + "update_group";
@@ -13,6 +15,7 @@ export const mainColumns = () => [
         title: "产品类型",
         dataIndex: "Sid",
         width: 200,
+        render: v => <Tag color="magenta">{v}</Tag>,
     },
     {
         title: "产品组别",
